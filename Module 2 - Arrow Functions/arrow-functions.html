@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Arrow functions ➡</title>
+  </head>
+  <body>
+
+    <!--
+
+    Arrow functions are always anonymous funtions
+
+
+    -->
+    <script>
+
+    // Understanding arrow functions
+    const names = ['jacob', 'sam', 'nathaniel'];
+
+    const fullNames = names.map(function(name) {
+      return `${name} arriola`;
+    });
+
+    const fullNames2 = names.map((name) => {
+      return `${name} arriola`;
+    });
+
+    const fullNames3 = names.map(name => {
+      return `${name} arriola`;
+    });
+
+    // implicit return
+    const fullNames4 = names.map(name => `${name} arriola`);
+
+    // no parameters, implicit return
+    const fullNames5 = names.map(() => `cool arriola`);
+
+    // console.log(fullNames5);
+
+    // Using a named function
+    const sayMyName = (name) => { alert(`Hello ${name}!`) };
+
+    // sayMyName('Jacob');
+
+
+
+    ////////////////////////////////////////////////////////////////////////////
+
+
+
+    // More examples - implicit return with an object literal
+
+    const race = '100m Dash';
+    const winners = ['Hunter Gath', 'Singa Song', 'Yo Dawg'];
+
+    // race = race: race - eliminate redundancy
+    const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));
+
+
+    // Using filter
+    const ages = [78, 23, 22, 87, 21, 99, 43];
+
+    // older way
+    const old = ages.filter(function(age) {
+      return age >= 60;
+    })
+    // using fat arrow
+    const old2 = ages.filter(age => age >= 60);
+
+
+    console.log(old);
+    console.log(old2);
+
+    </script>
+
+
+
+
+  </body>
+</html>
